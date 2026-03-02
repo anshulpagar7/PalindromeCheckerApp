@@ -2,7 +2,11 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("Palindrome Checker Application");
+        showWelcomeMessage();
 
+    }
+
+    public static void showWelcomeMessage() {
+        System.out.println("Welcome to Palindrome Checker Application");
     }
 }
