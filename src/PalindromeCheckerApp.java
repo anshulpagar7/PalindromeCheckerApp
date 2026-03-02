@@ -1,9 +1,11 @@
+import java.util.Scanner;
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
         showWelcomeMessage();
-        checkHardcodedPalindrome();
+        checkPalindromeUsingReverse();
 
     }
 
@@ -11,19 +13,25 @@ public class PalindromeCheckerApp {
         System.out.println("Welcome to Palindrome Checker Application");
     }
 
-    public static void checkHardcodedPalindrome() {
+    public static void checkPalindromeUsingReverse() {
 
-        String word = "madam";
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String original = scanner.nextLine();
+
         String reversed = "";
 
-        for (int i = word.length() - 1; i >= 0; i--) {
-            reversed += word.charAt(i);
+        // Reverse using for loop
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a Palindrome");
+        // Compare original and reversed
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a Palindrome");
         } else {
-            System.out.println(word + " is NOT a Palindrome");
+            System.out.println(original + " is NOT a Palindrome");
         }
     }
 }
